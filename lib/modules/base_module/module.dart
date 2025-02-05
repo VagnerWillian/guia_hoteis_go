@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../core/_core.dart';
@@ -10,6 +11,8 @@ class BaseModule extends Module {
     r.child(
       AppRoutes.baseRoute,
       child: (_) => const BasePage(),
+      transition: TransitionType.fadeIn,
+      duration: const Duration(seconds: 1),
       children: [
         ModuleRoute(AppRoutes.homeRoute, module: HomeModule()),
       ],

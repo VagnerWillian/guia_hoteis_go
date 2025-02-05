@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '_shared/_shared.dart';
 import 'core/constants/_constants.dart';
 
 
@@ -10,7 +11,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(AppRoutes.homeRoute);
+    Modular.setInitialRoute(AppRoutes.splashRoute);
 
     return MaterialApp.router(
       localizationsDelegates: const [
@@ -23,6 +24,7 @@ class AppWidget extends StatelessWidget {
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
       debugShowCheckedModeBanner: false,
+      theme: AppLightTheme.theme,
     );
   }
 }

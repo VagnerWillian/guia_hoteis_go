@@ -1,0 +1,1 @@
+export 'custom_pulsating_anim.dart';
