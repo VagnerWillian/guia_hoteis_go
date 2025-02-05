@@ -1,0 +1,29 @@
+name: app
+description: Guia de Motel GO
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+
+
+  # UI
+  cupertino_icons: ^1.0.8
+
+  # Utils
+  flutter_modular: ^6.3.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
