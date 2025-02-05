@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 enum SvgIconData {
+  logo('assets/images/logo_white.svg'),
   menu('assets/icons/menu.svg'),
   search('assets/icons/buscar.svg'),
   goNow('assets/icons/ir-agora.svg'),
-  goAfter('assets/icons/ir-depois.svg');
+  goAfter('assets/icons/ir-depois.svg'),
+  megafone('assets/icons/megafone.svg'),
+  bug('assets/icons/bug.svg'),
+  config('assets/icons/configuracoes.svg'),
+  help('assets/icons/ajuda.svg'),
+  myAccount('assets/icons/minha-conta.svg'),
+  hearth('assets/icons/coracao2.svg'),
+  reviews('assets/icons/reviews.svg'),
+  myReservations('assets/icons/minhas-reservas.svg');
 
   final String asset;
   const SvgIconData(this.asset);
@@ -35,7 +44,7 @@ class SvgIcon extends StatelessWidget {
             svgIconData.asset,
             width: size ?? 18,
             colorFilter: ColorFilter.mode(
-              IconTheme.of(context).color!,
+              color ?? IconTheme.of(context).color!,
               BlendMode.srcIn,
             ),
           ),

@@ -25,12 +25,17 @@ class _BasePageState extends State<BasePage> {
         ],
       ).value,
       child: Scaffold(
+        drawer: const LeftDrawer(),
         appBar: AppBar(
-          leading: const SvgIcon(
-            SvgIconData.menu,
-            padding: EdgeInsets.all(20),
-          ),
           toolbarHeight: 80,
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: ()=>Scaffold.of(context).openDrawer(),
+                icon: const SvgIcon(SvgIconData.menu),
+              );
+            },
+          ),
           title: const BubbleNavigationBar(),
           centerTitle: true,
           actions: [

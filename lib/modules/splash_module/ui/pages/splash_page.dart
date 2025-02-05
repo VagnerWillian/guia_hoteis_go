@@ -17,10 +17,11 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> _startApp() async {
     await Future.delayed(const Duration(seconds: 2));
-    _animController.start(_openBasePage);
+    _animController.start(onEnd: _openBasePage);
   }
 
-  void _openBasePage(){
+  Future<void> _openBasePage()async{
+    await Future.delayed(const Duration(milliseconds: 500));
     Modular.to.pushReplacementNamed(AppRoutes.homeRoute);
   }
 

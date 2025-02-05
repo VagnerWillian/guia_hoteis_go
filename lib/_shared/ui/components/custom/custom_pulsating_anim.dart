@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 
 class PulsatingFadeWidgetController {
   AnimationController? _controller;
+  VoidCallback? _onAnimationEnd;
 
   void _bind(AnimationController controller) {
     _controller = controller;
+    _controller?.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _onAnimationEnd?.call();
+      }
+    });
   }
 
-  void start(VoidCallback? run) {
-    _controller?.repeat();
-    if (run != null) run();
+  void start({VoidCallback? onEnd}) {
+    _onAnimationEnd = onEnd;
+    _controller?.forward(from: 0.0);
+    if (onEnd != null) onEnd();
   }
 
   void stop() {
@@ -51,11 +58,11 @@ class _PulsatingFadeWidgetState extends State<PulsatingFadeWidget>
     _scaleAnimation = TweenSequence<double>([
       TweenSequenceItem(
         tween: Tween<double>(begin: 1.0, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)),
-        weight: 30,
+        weight: 70,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.5, end: 10.1).chain(CurveTween(curve: Curves.easeInOut)),
-        weight: 70,
+        tween: Tween<double>(begin: 0.5, end: 10.0).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 30,
       ),
     ]).animate(_animationController);
 
