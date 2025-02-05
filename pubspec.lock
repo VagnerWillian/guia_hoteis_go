@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  bubble_tab_indicator:
+    dependency: "direct main"
+    description:
+      name: bubble_tab_indicator
+      sha256: "0aa37980a00e3374d917f9da8e83acd7f59ba872a3d05c306220063f28f945aa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.6"
   characters:
     dependency: transitive
     description:
@@ -245,6 +253,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  responsive_framework:
+    dependency: "direct main"
+    description:
+      name: responsive_framework
+      sha256: a8e1c13d4ba980c60cbf6fa1e9907cd60662bf2585184d7c96ca46c43de91552
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.5.1"
   result_dart:
     dependency: transitive
     description:

@@ -11,11 +11,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
-
   # UI
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.17
+  bubble_tab_indicator: ^0.1.6
+  responsive_framework: ^1.5.1
 
   # Utils
   flutter_modular: ^6.3.4
@@ -31,4 +31,30 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/icons/
     - assets/fonts/titillium/
+
+  fonts:
+    - family: Titillium
+      fonts:
+        - asset: assets/fonts/titillium/Titillium-Regular.otf
+        - asset: assets/fonts/titillium/Titillium-Bold.otf
+          weight: 700
+        - asset: assets/fonts/titillium/Titillium-BoldItalic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/titillium/Titillium-Light.otf
+          weight: 300
+        - asset: assets/fonts/titillium/Titillium-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/titillium/Titillium-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/titillium/Titillium-SemiboldItalic.otf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/titillium/Titillium-Thin.otf
+          weight: 100
+        - asset: assets/fonts/titillium/Titillium-ThinItalic.otf
+          weight: 100
+          style: italic
