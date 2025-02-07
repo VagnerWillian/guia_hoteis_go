@@ -3,7 +3,7 @@ description: Guia de Motel GO
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.6.2
 
 dependencies:
   flutter:
@@ -16,14 +16,25 @@ dependencies:
   flutter_svg: ^2.0.17
   bubble_tab_indicator: ^0.1.6
   responsive_framework: ^1.5.1
+  dotted_decoration: ^2.0.0
+  toastification: ^2.3.0
 
   # Utils
   flutter_modular: ^6.3.4
+  bloc: ^9.0.0
+  flutter_bloc: ^9.0.0
+  equatable: ^2.0.7
+  http: ^1.3.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # Tests
+  mocktail: ^1.0.4
+
+  # Analyze
   flutter_lints: ^5.0.0
 
 flutter:

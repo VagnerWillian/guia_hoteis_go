@@ -25,13 +25,14 @@ class _BasePageState extends State<BasePage> {
         ],
       ).value,
       child: Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
         drawer: const LeftDrawer(),
         appBar: AppBar(
           toolbarHeight: 80,
           leading: Builder(
             builder: (context) {
               return IconButton(
-                onPressed: ()=>Scaffold.of(context).openDrawer(),
+                onPressed: () => Scaffold.of(context).openDrawer(),
                 icon: const SvgIcon(SvgIconData.menu),
               );
             },
@@ -44,9 +45,13 @@ class _BasePageState extends State<BasePage> {
               icon: const SvgIcon(SvgIconData.search),
             ),
           ],
+          bottom: const PreferredSize(
+            preferredSize: Size(double.maxFinite, 30),
+            child: LocateSelectionBar(),
+          ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
-        body: DecoratedBox(
+        body: Container(
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),

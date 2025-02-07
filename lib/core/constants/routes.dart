@@ -4,4 +4,5 @@ class AppRoutes {
   static const splashRoute = '/carregando/';
 
   static String genericRoute({String? name}) => name == null ? '/:name' : '/$name';
+  static const locationRoute = '/localizacao/';
 }

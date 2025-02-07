@@ -1,12 +1,25 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../core/_core.dart';
 import '../_modules.dart';
-import 'ui/pages/base_page.dart';
-import 'ui/pages/generic_page.dart';
+import 'blocs/base_bloc.dart';
+import 'core/_core.dart';
+import 'ui/pages/_pages.dart';
 
 class BaseModule extends Module {
+  @override
+  void binds(Injector i) {
+    // Repositories
+    i
+      ..addLazySingleton<BaseOnlineRepository>(() => BaseApiRepository(Modular.get()))
+
+      // UseCases
+      ..addLazySingleton(() => GetLocationsUseCase(i.get()))
+
+    //Blocs
+    ..addLazySingleton(() => BaseBloc(i.get()));
+  }
+
   @override
   void routes(RouteManager r) {
     r
@@ -23,7 +36,12 @@ class BaseModule extends Module {
         AppRoutes.genericRoute(),
         child: (_) => GenericPage(name: Modular.args.data),
         transition: TransitionType.rightToLeft,
-        duration: const Duration(milliseconds: 200)
+        duration: const Duration(milliseconds: 200),
+      )
+      ..child(
+        AppRoutes.locationRoute,
+        child: (_) => LocationPage(Modular.get()),
+        transition: TransitionType.downToUp,
       );
   }
 }

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../../../_shared/_shared.dart';
-
 class GenericPage extends StatefulWidget {
   final String name;
   const GenericPage({this.name = 'Generico', super.key});

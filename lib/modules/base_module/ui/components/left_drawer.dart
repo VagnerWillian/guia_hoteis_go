@@ -80,14 +80,18 @@ class _LeftDrawerState extends State<LeftDrawer> {
                           children: [
                             _buildMenuItem(icon: SvgIconData.myAccount, name: 'minha conta'),
                             _buildMenuItem(
-                                icon: SvgIconData.myReservations, name: 'minhas reservas'),
+                              icon: SvgIconData.myReservations,
+                              name: 'minhas reservas',
+                            ),
                             _buildMenuItem(icon: SvgIconData.reviews, name: 'minhas avaliações'),
                             _buildMenuItem(icon: SvgIconData.hearth, name: 'meus motéis'),
                             _buildMenuItem(icon: SvgIconData.help, name: 'ajuda'),
                             _buildMenuItem(icon: SvgIconData.config, name: 'configurações'),
                             _buildMenuItem(icon: SvgIconData.bug, name: 'comunicar problema'),
                             _buildMenuItem(
-                                icon: SvgIconData.megafone, name: 'tem um motel? faça parte'),
+                              icon: SvgIconData.megafone,
+                              name: 'tem um motel? faça parte',
+                            ),
                           ],
                         ),
                       ),
