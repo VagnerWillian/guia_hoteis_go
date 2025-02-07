@@ -22,6 +22,7 @@ class BaseApiRepository implements BaseOnlineRepository {
       }
       return (json.decode(response.body) as List).map((e) => Location.fromJson(e)).toList();
     } catch (e, s) {
+      print(e);
       throw HandleFailures.identify(e, s);
     }
   }

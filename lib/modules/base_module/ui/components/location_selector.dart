@@ -21,33 +21,34 @@ class _LocateSelectionBarState extends State<LocateSelectionBar> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: ()=>Modular.to.pushNamed(AppRoutes.locationRoute),
-      child: Container(
-        width: 100,
-        margin: const EdgeInsets.only(bottom: 15),
-        decoration: DottedDecoration(
-          shape: Shape.line,
-          linePosition: LinePosition.bottom,
-          color: Colors.white,
-        ),
-        child: BlocBuilder<BaseBloc, BaseState>(
-          bloc: Modular.get<BaseBloc>(),
-          builder: (context, state) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  state.selectedLocation==null?'Localidade':state.selectedLocation!.location,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+      child: IntrinsicWidth(
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 15),
+          decoration: DottedDecoration(
+            shape: Shape.line,
+            linePosition: LinePosition.bottom,
+            color: Colors.white,
+          ),
+          child: BlocBuilder<BaseBloc, BaseState>(
+            bloc: Modular.get<BaseBloc>(),
+            builder: (context, state) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    state.selectedLocation==null?'escolha uma região':state.selectedLocation!.location,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.keyboard_arrow_down,
                     color: Colors.white,
                   ),
-                ),
-                const Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.white,
-                ),
-              ],
-            );
-          },
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
