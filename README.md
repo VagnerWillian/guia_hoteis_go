@@ -11,7 +11,7 @@ A estrutura do projeto foi organizada da seguinte maneira:
 - **module**: Contém os módulos específicos do projeto. O módulo **Base** contém as funcionalidades centrais reutilizáveis, enquanto o **Home** é o módulo que gerencia a tela inicial da aplicação.
 
 ## Versão do Flutter
-Este projeto está utilizando o **Flutter versão 3.24.5**.
+Este projeto está utilizando o **Flutter versão 3.27.4**.
 
 ## Como Rodar o Projeto
 
