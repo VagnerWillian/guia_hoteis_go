@@ -51,7 +51,7 @@ class _BasePageState extends State<BasePage> {
           ),
         ),
         body: Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),

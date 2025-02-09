@@ -3,7 +3,7 @@ import '../../../core/failures/failure.dart';
 
 abstract class BaseEvent {}
 
-class InitializeEvent extends BaseEvent {}
+class InitializeBaseEvent extends BaseEvent {}
 
 class ChangeSwitchMyLocationEvent extends BaseEvent {
   final bool value;

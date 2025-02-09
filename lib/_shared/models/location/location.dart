@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';
 
-import '../../core/core/entities/_entities.dart';
+import '../../../core/core/entities/_entities.dart';
 
 class Location extends Equatable implements LocationEntity {
   @override

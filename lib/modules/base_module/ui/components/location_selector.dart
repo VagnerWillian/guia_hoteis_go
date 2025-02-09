@@ -27,7 +27,7 @@ class _LocateSelectionBarState extends State<LocateSelectionBar> {
           decoration: DottedDecoration(
             shape: Shape.line,
             linePosition: LinePosition.bottom,
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.surfaceBright,
           ),
           child: BlocBuilder<BaseBloc, BaseState>(
             bloc: Modular.get<BaseBloc>(),
@@ -38,12 +38,12 @@ class _LocateSelectionBarState extends State<LocateSelectionBar> {
                   Text(
                     state.selectedLocation==null?'escolha uma região':state.selectedLocation!.location,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.surfaceBright,
                     ),
                   ),
-                  const Icon(
+                  Icon(
                     Icons.keyboard_arrow_down,
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.surfaceBright,
                   ),
                 ],
               );

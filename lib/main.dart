@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PaintingBinding.instance.imageCache.maximumSizeBytes = 1000 << 20;
+
     return ModularApp(
       module: AppModule(),
       child: const AppWidget(),

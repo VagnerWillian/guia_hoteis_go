@@ -39,7 +39,7 @@ class _BubbleNavigationBarState extends State<BubbleNavigationBar> with TickerPr
       child: TabBar(
         controller: _tabController,
         indicatorSize: TabBarIndicatorSize.tab,
-        unselectedLabelColor: Colors.white,
+        unselectedLabelColor: Theme.of(context).colorScheme.surfaceBright,
         labelStyle: tabLabelStyle,
         indicator: BubbleTabIndicator(
           indicatorHeight: height,

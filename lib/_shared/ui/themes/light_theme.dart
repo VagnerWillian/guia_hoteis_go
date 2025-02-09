@@ -6,7 +6,7 @@ class AppLightTheme {
   static const secondaryColor = Color(0xFFCA0000);
   static const scaffoldColor = Color(0xFFF0F0F0);
   static const containerColor = Color(0xFFFFFFFF);
-  static const greyBrightnessColor = Color(0xFF464646);
+  static const greyBrightnessColor = Color(0xFF5A5A5A);
 
   static ThemeData get theme => ThemeData(
         fontFamily: 'Titillium',
@@ -33,6 +33,9 @@ class AppLightTheme {
           primary: primaryColor,
           secondary: secondaryColor,
           primaryContainer: containerColor,
+          secondaryContainer: containerColor,
+          tertiaryContainer: Color(0xFFF8F9FB),
+          surfaceBright: Colors.white,
         ),
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(
@@ -52,6 +55,22 @@ class AppLightTheme {
             if (states.contains(WidgetState.selected)) return primaryColor;
             return Colors.grey;
           }),
+        ),
+        chipTheme: ChipThemeData(
+          selectedColor: primaryColor,
+          secondaryLabelStyle: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
+          iconTheme: const IconThemeData(color: greyBrightnessColor),
+          side: BorderSide(color: greyBrightnessColor.withValues(alpha: .2)),
+          disabledColor:Colors.white,
+          labelStyle: const TextStyle(
+            color: greyBrightnessColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
         ),
         textTheme: const TextTheme(
           bodySmall: TextStyle(
@@ -86,6 +105,9 @@ class AppLightTheme {
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
           ),
+          headlineSmall: TextStyle(color: greyBrightnessColor),
+          headlineMedium: TextStyle(color: greyBrightnessColor),
+          headlineLarge: TextStyle(color: greyBrightnessColor),
         ),
       );
 }

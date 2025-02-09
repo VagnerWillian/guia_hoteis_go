@@ -10,9 +10,12 @@ class LocationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _baseBloc.add(InitializeEvent());
+    _baseBloc.add(InitializeBaseEvent());
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
         leading: IconButton(
           onPressed: Modular.to.pop,
           icon: Icon(
@@ -26,8 +29,6 @@ class LocationPage extends StatelessWidget {
                 color: Colors.grey.shade600,
               ),
         ),
-        centerTitle: true,
-        backgroundColor: const Color(0xFFF8F9fB),
         bottom: PreferredSize(
           preferredSize: const Size(double.maxFinite, 60),
           child: ColoredBox(
@@ -59,7 +60,6 @@ class LocationPage extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: const Color(0xFFF8F9fB),
       body: BlocBuilder<BaseBloc, BaseState>(
         bloc: _baseBloc,
         builder: (context, state) {

@@ -36,7 +36,7 @@ void main() {
     test('Add InitialEvent when load all locations with success', () {
       // Arrange
       when(() => getLocationsUseCaseMock()).thenAnswer((_) async => mockLocationsMap);
-      baseBloc.add(InitializeEvent());
+      baseBloc.add(InitializeBaseEvent());
 
       // Assert
       expectLater(
@@ -55,7 +55,7 @@ void main() {
       // Arrange
       var failure = AppFailure();
       when(() => getLocationsUseCaseMock()).thenThrow(failure);
-      baseBloc.add(InitializeEvent());
+      baseBloc.add(InitializeBaseEvent());
 
       // Assert
       expectLater(
@@ -74,7 +74,7 @@ void main() {
       // Arrange
       var failure = NetworkFailure();
       when(() => getLocationsUseCaseMock()).thenThrow(failure);
-      baseBloc.add(InitializeEvent());
+      baseBloc.add(InitializeBaseEvent());
 
       // Assert
       expectLater(

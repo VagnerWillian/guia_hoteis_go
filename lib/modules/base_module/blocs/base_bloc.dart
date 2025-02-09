@@ -9,14 +9,14 @@ class BaseBloc extends Bloc<BaseEvent, BaseState> {
   final GetLocationsUseCase _getLocationsUseCase;
 
   BaseBloc(this._getLocationsUseCase) : super(const BaseState.initial()) {
-    on<InitializeEvent>(_getAllLocations);
+    on<InitializeBaseEvent>(_getAllLocations);
     on<ChangeSwitchMyLocationEvent>(_switchMyLocation);
     on<ChangeLocationEvent>(_changeLocation);
     on<FailureLocationEvent>(_showFailure);
   }
 
   Future<void> _getAllLocations(
-    InitializeEvent event,
+    InitializeBaseEvent event,
     Emitter<BaseState> emit,
   ) async {
     emit(state.copyWith(loading: true));
