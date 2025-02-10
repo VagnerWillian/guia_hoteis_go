@@ -33,6 +33,9 @@ Para rodar os testes, rode o seguinte comando
 
 ## Screenshots
 
+<img src="https://github.com/favicon.ico" width="48">
+
+
 ![App Screenshot](https://github.com/VagnerWillian/guia_hoteis_go/blob/main/screenshot_0.png?raw=true)
 
 ![App Screenshot](https://github.com/VagnerWillian/guia_hoteis_go/blob/main/screenshot_2.png?raw=true)
