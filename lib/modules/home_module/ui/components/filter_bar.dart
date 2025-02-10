@@ -12,6 +12,7 @@ class FilterBar extends StatelessWidget {
     return Container(
       height: 65,
       padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(top: 2),
       color: Theme.of(context).colorScheme.primaryContainer,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -19,6 +20,7 @@ class FilterBar extends StatelessWidget {
           bloc: _homeBloc,
           builder: (context, state) {
             return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Badge(
                   alignment: Alignment.topLeft,

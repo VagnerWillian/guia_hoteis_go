@@ -1,10 +1,9 @@
-
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../../../core/constants/_constants.dart';
+import '../../../../core/_core.dart';
 import '../../blocs/base_bloc.dart';
 import '../../blocs/base_state.dart';
 

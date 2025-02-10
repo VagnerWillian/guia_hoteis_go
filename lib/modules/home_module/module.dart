@@ -2,12 +2,22 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../core/_core.dart';
 import 'blocs/_blocs.dart';
+import 'core/domain/repositories/online_repository.dart';
+import 'core/domain/usecases/get_motel_usecase.dart';
+import 'core/infra/repositories/_repositories.dart';
 import 'ui/pages/home_page.dart';
 
 class HomeModule extends Module {
   @override
   void binds(Injector i) {
-    i.addLazySingleton(() => HomeBloc());
+    // UseCases
+    i..addLazySingleton<HomeOnlineRepository>(() => HomeApiRepository(Modular.get()))
+
+    // UseCases
+    ..addLazySingleton(() => GetMotelsUseCase(Modular.get()))
+
+      // Blocs
+    ..addLazySingleton(() => HomeBloc(Modular.get()));
   }
 
   @override

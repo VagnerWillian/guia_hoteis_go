@@ -88,20 +88,25 @@ class OfferCard extends StatelessWidget {
                             ),
                       ),
                       const SizedBox(height: 10),
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        label: const Text('reservar'),
-                        icon: const Icon(Icons.arrow_forward_ios),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF00BC8A),
-                          foregroundColor: Colors.white,
-                          iconColor: Colors.white,
-                          elevation: 0,
-                          shadowColor: Colors.transparent,
-                          minimumSize: const Size(double.maxFinite, 20),
-                          fixedSize: const Size(double.maxFinite, 35),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
+                      Center(
+                        child: Container(
+                          constraints: const BoxConstraints(maxWidth: 300),
+                          child: ElevatedButton.icon(
+                            onPressed: () {},
+                            label: const Text('reservar'),
+                            icon: const Icon(Icons.arrow_forward_ios),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF00BC8A),
+                              foregroundColor: Colors.white,
+                              iconColor: Colors.white,
+                              elevation: 0,
+                              shadowColor: Colors.transparent,
+                              minimumSize: const Size(double.maxFinite, 20),
+                              fixedSize: const Size(double.maxFinite, 35),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
                           ),
                         ),
                       ),

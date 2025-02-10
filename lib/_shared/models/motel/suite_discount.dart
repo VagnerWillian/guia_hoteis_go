@@ -7,6 +7,6 @@ class SuiteDiscount implements SuiteDiscountEntity {
   SuiteDiscount({required this.discount});
 
   factory SuiteDiscount.fromJson(Map<String, dynamic> json) {
-    return SuiteDiscount(discount: json['disconto']);
+    return SuiteDiscount(discount: json['desconto']);
   }
 }

@@ -1,12 +1,18 @@
 import 'package:app/modules/home_module/blocs/_blocs.dart';
+import 'package:app/modules/home_module/core/domain/usecases/get_motel_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 
+class GetMotelsUseCaseMock extends Mock implements GetMotelsUseCase{}
 void main() {
   late HomeBloc homeBloc;
+  late GetMotelsUseCase getMotelsUseCaseMock;
+
   var timeout = const Duration(seconds: 10);
 
   setUp(() {
-    homeBloc = HomeBloc();
+    getMotelsUseCaseMock = GetMotelsUseCaseMock();
+    homeBloc = HomeBloc(getMotelsUseCaseMock);
   });
 
   tearDown(() {

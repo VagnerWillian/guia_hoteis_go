@@ -1,9 +1,12 @@
 import 'package:bloc/bloc.dart';
 
+import '../core/domain/usecases/get_motel_usecase.dart';
 import '_blocs.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(const HomeState.initial()) {
+  final GetMotelsUseCase _getMotelUseCase;
+
+  HomeBloc(this._getMotelUseCase) : super(const HomeState.initial()) {
     on<UpdateFilterEvent>(_updateFilters);
     on<GetMotelsListEvent>(_getHotelsList);
   }
@@ -23,7 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(loading: true));
-    await Future.delayed(const Duration(seconds: 2));
-    emit(state.copyWith(loading: false));
+    var motelPagination = await _getMotelUseCase(query: state.filters);
+    emit(state.copyWith(loading: false, motels: motelPagination.motels));
   }
 }

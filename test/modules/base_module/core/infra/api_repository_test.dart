@@ -23,15 +23,11 @@ void main() {
     reset(mockClient);
   });
 
-
   group('Success Cases', () {
     test('getShould be return list from locations', () async {
       // Arrange
       when(
-        () => mockClient.get(
-          any(),
-          headers: any(named: 'headers'),
-        ),
+        () => mockClient.get(any()),
       ).thenAnswer((_) async => http.Response(mockLocationJson, 200));
 
       // Act
@@ -41,10 +37,7 @@ void main() {
       expect(result, mockLocationsModel);
 
       verify(
-        () => mockClient.get(
-          any(),
-          headers: any(named: 'headers'),
-        ),
+        () => mockClient.get(any()),
       ).called(1);
     });
   });
@@ -53,10 +46,7 @@ void main() {
     test('getShould be return a throw NetworkFailure if status code < 200', () async {
       // Arrange
       when(
-        () => mockClient.get(
-          any(),
-          headers: any(named: 'headers'),
-        ),
+        () => mockClient.get(any()),
       ).thenAnswer((_) async => http.Response(mockLocationJson, 199));
 
       // Act
@@ -71,7 +61,6 @@ void main() {
       when(
         () => mockClient.get(
           any(),
-          headers: any(named: 'headers'),
         ),
       ).thenAnswer((_) async => http.Response(mockLocationJson, 300));
 
@@ -85,10 +74,7 @@ void main() {
     test('getShould be return a throw FailureApp if body is empty', () async {
       // Arrange
       when(
-        () => mockClient.get(
-          any(),
-          headers: any(named: 'headers'),
-        ),
+        () => mockClient.get(any()),
       ).thenAnswer((_) async => http.Response('', 200));
 
       // Act
@@ -101,10 +87,7 @@ void main() {
     test('getShould be return a throw FailureApp if any exception', () async {
       // Arrange
       when(
-        () => mockClient.get(
-          any(),
-          headers: any(named: 'headers'),
-        ),
+        () => mockClient.get(any()),
       ).thenThrow((_) async => Exception());
 
       // Act

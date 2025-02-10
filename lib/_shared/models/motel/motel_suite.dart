@@ -39,7 +39,7 @@ class SuiteMotel implements SuiteMotelEntity {
       items: (json['itens'] as List).map((e) => SuiteItem.fromJson(e)).toList(),
       itemsCategory: (json['categoriaItens'] as List).map((e) => SuiteItemCat.fromJson(e)).toList(),
       periods: (json['periodos'] as List).map((e) => SuitePeriod.fromJson(e)).toList(),
-      pictures: json['fotos'],
+      pictures: (json['fotos'] as List).map((e)=>e as String).toList(),
       quantity: json['qtd'],
       showQuantityAvailable: json['exibirQtdDisponiveis'],
     );

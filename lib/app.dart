@@ -5,7 +5,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:toastification/toastification.dart';
 
 import '_shared/_shared.dart';
-import 'core/constants/_constants.dart';
+import 'core/_core.dart';
 
 
 class AppWidget extends StatelessWidget {

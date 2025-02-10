@@ -12,13 +12,13 @@ class SuitePeriod implements SuitePeriodEntity {
   late final double priceTotal;
 
   @override
-  late final int time;
+  late final String time;
 
   @override
   late final String timeFormated;
 
   @override
-  late final SuiteDiscountEntity discount;
+  late final SuiteDiscountEntity? discount;
 
   SuitePeriod({
     required this.time,
@@ -36,7 +36,7 @@ class SuitePeriod implements SuitePeriodEntity {
       hasCourtesy: json['temCortesia'],
       price: json['valor'],
       priceTotal: json['valorTotal'],
-      discount: SuiteDiscount.fromJson(json['desconto']),
+      discount: json['desconto']==null ? null : SuiteDiscount.fromJson(json['desconto']),
     );
   }
 }
