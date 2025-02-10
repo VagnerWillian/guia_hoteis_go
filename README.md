@@ -34,11 +34,11 @@ Para rodar os testes, rode o seguinte comando
 ## Screenshots
 
 <div style="display: flex; justify-content: space-around;">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_0.png?raw=true" width="300">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_1.png?raw=true" width="300">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_2.png?raw=true" width="300">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_3.png?raw=true" width="300">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_4.png?raw=true" width="300">
-<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_5.png?raw=true" width="300">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_0.png?raw=true" width="200">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_1.png?raw=true" width="200">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_2.png?raw=true" width="200">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_3.png?raw=true" width="200">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_4.png?raw=true" width="200">
+<img src="https://github.com/VagnerWillian/guia_hoteis_go/raw/main/screenshot_5.png?raw=true" width="200">
 </div>
 
