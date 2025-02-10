@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../core/_core.dart';
 import '../../blocs/_blocs.dart';
 
 class LocationPage extends StatelessWidget {
@@ -40,16 +41,17 @@ class LocationPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              trailing: BlocBuilder<BaseBloc, BaseState>(
+              trailing: BlocSelector<BaseBloc, BaseState, bool>(
                 bloc: _baseBloc,
-                builder: (context, state) {
+                selector: (state)=>state.activateMyLocation,
+                builder: (context, activateMyLocation) {
                   return SizedBox(
                     width: 45,
                     height: 35,
                     child: FittedBox(
                       fit: BoxFit.fill,
                       child: Switch(
-                        value: state.activateMyLocation,
+                        value: activateMyLocation,
                         onChanged: (v) => _baseBloc.add(ChangeSwitchMyLocationEvent(value: v)),
                       ),
                     ),
@@ -60,10 +62,11 @@ class LocationPage extends StatelessWidget {
           ),
         ),
       ),
-      body: BlocBuilder<BaseBloc, BaseState>(
+      body: BlocSelector<BaseBloc, BaseState, bool>(
         bloc: _baseBloc,
-        builder: (context, state) {
-          if (state.loading) {
+        selector: (state)=>state.loading,
+        builder: (context, loading) {
+          if (loading) {
             return const Center(
               child: SizedBox(
                 width: 20,
@@ -75,42 +78,54 @@ class LocationPage extends StatelessWidget {
           return SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             primary: true,
-            child: Column(
-              children: state.locations.keys.map((zone) {
+            child: BlocSelector<BaseBloc, BaseState, Map<String, List<LocationEntity>>>(
+              bloc: _baseBloc,
+              selector: (state)=>state.locations,
+              builder: (context, locations) {
                 return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      padding: const EdgeInsets.all(20),
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      child: Text(
-                        zone,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                    ),
-                    ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: state.locations[zone]!.length,
-                      shrinkWrap: true,
-                      itemBuilder: (_, index) {
-                        return RadioListTile(
-                          value: state.locations[zone]![index],
-                          title: Text(
-                            state.locations[zone]![index].location,
+                  children: locations.keys.map((zone) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.all(20),
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          child: Text(
+                            zone,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
-                          groupValue: state.selectedLocation,
-                          onChanged: (v) => _baseBloc.add(
-                            ChangeLocationEvent(location: state.locations[zone]![index]),
-                          ),
-                          controlAffinity: ListTileControlAffinity.trailing,
-                        );
-                      },
-                    ),
-                  ],
+                        ),
+                        BlocSelector<BaseBloc, BaseState, LocationEntity?>(
+                          bloc: _baseBloc,
+                          selector: (state)=>state.selectedLocation,
+                          builder: (context, selectedLocation) {
+                            return ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: locations[zone]!.length,
+                              shrinkWrap: true,
+                              itemBuilder: (_, index) {
+                                return RadioListTile(
+                                  value: locations[zone]![index],
+                                  title: Text(
+                                    locations[zone]![index].location,
+                                    style: Theme.of(context).textTheme.bodyMedium,
+                                  ),
+                                  groupValue: selectedLocation,
+                                  onChanged: (v) => _baseBloc.add(
+                                    ChangeLocationEvent(location: locations[zone]![index]),
+                                  ),
+                                  controlAffinity: ListTileControlAffinity.trailing,
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    );
+                  }).toList(),
                 );
-              }).toList(),
+              },
             ),
           );
         },

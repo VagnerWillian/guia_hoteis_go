@@ -24,7 +24,7 @@ void main() {
   });
 
   group('Success Cases', () {
-    test('getShould be return list from locations', () async {
+    test('Should be return list from locations', () async {
       // Arrange
       when(
         () => mockClient.get(any()),
@@ -43,7 +43,7 @@ void main() {
   });
 
   group('Fails Cases', () {
-    test('getShould be return a throw NetworkFailure if status code < 200', () async {
+    test('Should be return a throw NetworkFailure if status code < 200', () async {
       // Arrange
       when(
         () => mockClient.get(any()),
@@ -56,7 +56,7 @@ void main() {
       expect(result, throwsA(isA<NetworkFailure>()));
     });
 
-    test('getShould be return a throw NetworkFailure if status code > 299', () async {
+    test('Should be return a throw NetworkFailure if status code > 299', () async {
       // Arrange
       when(
         () => mockClient.get(
@@ -71,7 +71,7 @@ void main() {
       expect(result, throwsA(isA<NetworkFailure>()));
     });
 
-    test('getShould be return a throw FailureApp if body is empty', () async {
+    test('Should be return a throw FailureApp if body is empty', () async {
       // Arrange
       when(
         () => mockClient.get(any()),
@@ -84,7 +84,7 @@ void main() {
       expect(result, throwsA(isA<AppFailure>()));
     });
 
-    test('getShould be return a throw FailureApp if any exception', () async {
+    test('Should be return a throw FailureApp if any exception', () async {
       // Arrange
       when(
         () => mockClient.get(any()),

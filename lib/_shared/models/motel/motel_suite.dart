@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
+import 'package:equatable/equatable.dart';
+
 import '../../../core/_core.dart';
 import '../../_shared.dart';
 
-class SuiteMotel implements SuiteMotelEntity {
+class SuiteMotel extends Equatable implements SuiteMotelEntity {
   @override
   late final String name;
 
@@ -44,4 +48,15 @@ class SuiteMotel implements SuiteMotelEntity {
       showQuantityAvailable: json['exibirQtdDisponiveis'],
     );
   }
+
+  @override
+  List get props => [
+    name,
+    items,
+    itemsCategory,
+    periods,
+    pictures,
+    quantity,
+    showQuantityAvailable,
+  ];
 }

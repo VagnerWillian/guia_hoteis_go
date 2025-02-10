@@ -25,7 +25,7 @@ class BaseModule extends Module {
     r
       ..child(
         AppRoutes.baseRoute,
-        child: (_) => const BasePage(),
+        child: (_) => BasePage(Modular.get()),
         transition: TransitionType.fadeIn,
         duration: const Duration(seconds: 1),
         children: [

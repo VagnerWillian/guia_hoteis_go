@@ -1,5 +1,4 @@
 import '../../../core/_core.dart';
-import '../../../core/failures/failure.dart';
 
 abstract class BaseEvent {}
 
@@ -23,7 +22,7 @@ class LoadingLocationEvent extends BaseEvent {
   LoadingLocationEvent({required this.value});
 }
 
-class FailureLocationEvent extends BaseEvent {
+class FailureLocationEvent extends BaseEvent  {
   final Failure? failure;
 
   FailureLocationEvent({required this.failure});

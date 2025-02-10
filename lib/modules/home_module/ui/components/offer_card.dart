@@ -1,5 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../../../core/_core.dart';
+import '../../blocs/_blocs.dart';
 
 class OfferCard extends StatelessWidget {
   const OfferCard({super.key});
@@ -8,13 +12,11 @@ class OfferCard extends StatelessWidget {
   Widget build(BuildContext context) {
     PaintingBinding.instance.imageCache.maximumSizeBytes = 1000 << 20;
 
-    return DecoratedBox(
+    return Container(
+      margin: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondaryContainer,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-        ),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
         height: 200,
@@ -29,7 +31,7 @@ class OfferCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   fadeInDuration: Duration.zero,
                   imageUrl: 'https://images.unsplash.com/'
-                      'photo-1631049307264-da0ec9d70304',
+                      'photo-1631049307264-da0ec9d70304?q=80&w=1932&auto=format&fit=crop',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -92,7 +94,16 @@ class OfferCard extends StatelessWidget {
                         child: Container(
                           constraints: const BoxConstraints(maxWidth: 300),
                           child: ElevatedButton.icon(
-                            onPressed: () {},
+                            onPressed: () {
+                              Modular.get<HomeBloc>().add(
+                                FailureEvent(
+                                  AppFailure(
+                                    title: 'Exemplo de Erro',
+                                    message: 'Erro criado para mostrar um exemplo de erro',
+                                  ),
+                                ),
+                              );
+                            },
                             label: const Text('reservar'),
                             icon: const Icon(Icons.arrow_forward_ios),
                             style: ElevatedButton.styleFrom(

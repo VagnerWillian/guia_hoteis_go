@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
+import 'package:equatable/equatable.dart';
+
 import '../../../core/_core.dart';
 import '../../_shared.dart';
 
-class Motel implements MotelEntity {
+class Motel extends Equatable implements MotelEntity {
   @override
   late final String fantasy;
 
@@ -49,4 +53,16 @@ class Motel implements MotelEntity {
       suites: (json['suites'] as List).map((e) => SuiteMotel.fromJson(e)).toList(),
     );
   }
+
+  @override
+  List get props => [
+        fantasy,
+        logo,
+        district,
+        distance,
+        favoriteQuantity,
+        reviewsAverage,
+        reviewsQuantity,
+        suites,
+      ];
 }

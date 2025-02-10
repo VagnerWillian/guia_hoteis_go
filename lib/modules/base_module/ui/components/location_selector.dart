@@ -28,14 +28,15 @@ class _LocateSelectionBarState extends State<LocateSelectionBar> {
             linePosition: LinePosition.bottom,
             color: Theme.of(context).colorScheme.surfaceBright,
           ),
-          child: BlocBuilder<BaseBloc, BaseState>(
+          child: BlocSelector<BaseBloc, BaseState, LocationEntity?>(
             bloc: Modular.get<BaseBloc>(),
+            selector: (state)=>state.selectedLocation,
             builder: (context, state) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    state.selectedLocation==null?'escolha uma região':state.selectedLocation!.location,
+                    state==null?'escolha uma região':state.location,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: Theme.of(context).colorScheme.surfaceBright,
                     ),

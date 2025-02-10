@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
+import 'package:equatable/equatable.dart';
+
 import '../../../core/_core.dart';
 import '../../_shared.dart';
 
-class MotelPagination implements MotelPaginationEntity {
+class MotelPagination extends Equatable implements MotelPaginationEntity {
   @override
   late final int page;
 
@@ -41,7 +45,18 @@ class MotelPagination implements MotelPaginationEntity {
       radius: json['raio'],
       totalMotels: json['totalMoteis'],
       totalSuites: json['totalSuites'],
-      motels: (json['moteis'] as List).map((e)=>Motel.fromJson(e)).toList(),
+      motels: (json['moteis'] as List).map((e) => Motel.fromJson(e)).toList(),
     );
   }
+
+  @override
+  List get props => [
+        page,
+        maxPage,
+        quantityPerPage,
+        radius,
+        totalMotels,
+        totalSuites,
+        motels,
+      ];
 }

@@ -11,8 +11,7 @@ class FilterBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 65,
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(top: 2),
+      padding: const EdgeInsets.only(left: 10),
       color: Theme.of(context).colorScheme.primaryContainer,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -25,7 +24,7 @@ class FilterBar extends StatelessWidget {
                 Badge(
                   alignment: Alignment.topLeft,
                   offset: const Offset(5,0),
-                  isLabelVisible: state.filters.keys.isNotEmpty,
+                  isLabelVisible: state.filters.keys.isNotEmpty && !state.loading,
                   label: Text('${state.filters.keys.length}'),
                   child: ActionChip(
                     onPressed: state.loading ? null : () {},
@@ -58,7 +57,7 @@ class FilterBar extends StatelessWidget {
         selected: !enabled ? false : _homeBloc.state.filters.containsKey(key),
         side: selected && enabled ? BorderSide.none : null,
         onSelected: !enabled ? null : (v) {
-          _homeBloc..add(UpdateFilterEvent(key: key, value: v))
+          _homeBloc..add(UpdateFilterEvent(key: key, value: '$v'))
           ..add(GetMotelsListEvent());
         },
       ),

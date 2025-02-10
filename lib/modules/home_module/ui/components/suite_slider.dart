@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../_shared/_shared.dart';
 import '../../../../core/_core.dart';
 
 class SuiteSlider extends StatelessWidget {
@@ -29,6 +30,7 @@ class SuiteSlider extends StatelessWidget {
                     fadeInDuration: Duration.zero,
                     imageUrl: suites[index].pictures.first,
                     fit: BoxFit.cover,
+                    placeholder: (_,__)=>const CustomRectShimmer(height: 250),
                   ),
                 ),
                 const SizedBox(height: 20),

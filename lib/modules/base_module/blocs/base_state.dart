@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 import '../../../../core/_core.dart';
-import '../../../core/failures/failure.dart';
 
 class BaseState extends Equatable {
   final LocationEntity? selectedLocation;
