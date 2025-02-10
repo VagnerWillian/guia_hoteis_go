@@ -1,24 +1,39 @@
-# APP Guia de Hoteis GO
 
-## Apresentação
-O **APP Guia de Hoteis GO** é uma aplicação desenvolvida para ajudar os usuários a encontrarem e visualizarem opções de hospedagem na região de Goiás. A plataforma oferece uma navegação simples e eficaz para explorar os melhores hotéis da área, com foco na facilidade de uso e desempenho.
-
-## Estrutura de Pastas
-A estrutura do projeto foi organizada da seguinte maneira:
+![Logo](https://play-lh.googleusercontent.com/r4qi347YJGUlOWDRJViHLQrgOB0lqszp8v0-Au2WTBTF7tVpmEbz_N7CEWVyQGqaPP4=w240-h480-rw)
 
 
-- **core**: Contém os componentes principais e de configuração do projeto, como serviços e utilitários compartilhados.
-- **module**: Contém os módulos específicos do projeto. O módulo **Base** contém as funcionalidades centrais reutilizáveis, enquanto o **Home** é o módulo que gerencia a tela inicial da aplicação.
+# Guia de Moteis - GO
 
-## Versão do Flutter
-Este projeto está utilizando o **Flutter versão 3.27.4**.
+É uma aplicação desenvolvida para ajudar os usuários a encontrarem e visualizarem opções de hospedagem na região de Goiás. A plataforma oferece uma navegação simples e eficaz para explorar os melhores hotéis da área, com foco na facilidade de uso e desempenho.
+## Stack utilizada
 
-## Como Rodar o Projeto
+**Front-end:** Flutter, Dart - 3.27.4
 
-1. Clone este repositório.
-2. Execute o comando `flutter pub get` para instalar as dependências.
-3. Execute o aplicativo com o comando `flutter run`.
+**IDE** Android Studio (LadyBug)
 
-## Licença
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Rodando os testes
+
+Para rodar os testes, rode o seguinte comando
+
+```bash
+  flutter test -- coverage
+```
+
+
+## 🔗 APK de teste
+
+[![linkedin](https://img.shields.io/badge/android-.apk-34d399?style=for-the-badge&logo=linkedin&logoColor=white)](https://drive.google.com/file/d/1TCtBWiraFzyIJHI2DhxQ3Wpit48cRxpb/view?usp=sharing)
+
+
+## 🔗 Links
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vagnerwillian/)
+
+
+## Screenshots
+
+![App Screenshot](https://github.com/VagnerWillian/guia_hoteis_go/blob/main/screenshot_0.png?raw=true)
+
+![App Screenshot](https://github.com/VagnerWillian/guia_hoteis_go/blob/main/screenshot_2.png?raw=true)
 
