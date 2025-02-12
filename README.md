@@ -2,7 +2,7 @@
 ![Logo](https://play-lh.googleusercontent.com/r4qi347YJGUlOWDRJViHLQrgOB0lqszp8v0-Au2WTBTF7tVpmEbz_N7CEWVyQGqaPP4=w240-h480-rw)
 
 
-# Guia de Moteis - GO
+# Guia de Moteis - GO - PROJETO TESTE!
 
 É uma aplicação desenvolvida para ajudar os usuários a encontrarem e visualizarem opções de hospedagem na região de Goiás. A plataforma oferece uma navegação simples e eficaz para explorar os melhores hotéis da área, com foco na facilidade de uso e desempenho.
 ## Stack utilizada
