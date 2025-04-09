@@ -4,7 +4,7 @@
 
 # Guia de Moteis - GO - PROJETO TESTE!
 
-Esta é uma aplicação desenvolvida com a finalidade de testar meus conhecimentos e habilidades com Flutter em uma candidatura, ela é um simples clone do APP Motel GO.
+Esta é uma aplicação desenvolvida com a finalidade de testar meus conhecimentos e habilidades com Flutter, ela é um simples clone do APP Motel GO.
 
 ## Conhecimentos e habilidades aplicados
 - Modularização com injeção de dependencias e gestão de rotas com Flutter Modular
