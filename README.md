@@ -4,7 +4,20 @@
 
 # Guia de Moteis - GO - PROJETO TESTE!
 
-É uma aplicação desenvolvida para ajudar os usuários a encontrarem e visualizarem opções de hospedagem na região de Goiás. A plataforma oferece uma navegação simples e eficaz para explorar os melhores hotéis da área, com foco na facilidade de uso e desempenho.
+Esta é uma aplicação desenvolvida com a finalidade de testar meus conhecimentos e habilidades com Flutter em uma candidatura, ela é um simples clone do APP Motel GO.
+
+## Conhecimentos e habilidades aplicados
+- Modularização com injeção de dependencias e gestão de rotas com Flutter Modular
+- Testes unitários
+- Gerenciamento de estado com BLOC
+- Animações
+- Requisição HTTP
+- Codigo limpo
+- Arquitetura Limpa
+- Codigo e componentes reaproveitáveis
+- Performance aprimorada
+- Responsividade
+
 ## Stack utilizada
 
 **Front-end:** Flutter, Dart - 3.27.4
